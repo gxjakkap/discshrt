@@ -15,7 +15,7 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
 }
 
-const rest = new REST({ version: '9' }).setToken(settings.botToken, );
+const rest = new REST({ version: '9' }).setToken(settings.botToken);
 
 (async () => {
   try {
