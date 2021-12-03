@@ -15,14 +15,14 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
 }
 
-const rest = new REST({ version: '9' }).setToken(settings.botToken);
+const rest = new REST({ version: '9' }).setToken(settings.botToken, );
 
 (async () => {
   try {
     console.log('Started refreshing application (/) commands.');
 
     await rest.put(
-      Routes.applicationGuildCommands(settings.botClientId, settings.testGuildId),
+      Routes.applicationCommands(settings.botClientId),
       { body: commands },
     );
 
@@ -46,5 +46,12 @@ client.on('ready', () => {
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
     });
+
+  client.on("guildCreate", guild => {
+    console.log("Guild Joined: " + guild.name);
+  })
+  client.on("guildDelete", guild => {
+    console.log("Guild Left: " + guild.name);
+  })
   
   client.login(settings.botToken);

@@ -21,7 +21,7 @@ module.exports = {
         .setName('short')
         .setDescription('Shorten link with Firebase dynamic link')
         .addStringOption(options => options.setName('input').setDescription('Url').setRequired(true))
-        .addStringOption(options => options.setName('option').setDescription('Specifies if the link should be unguessable or short. Check Wiki for details.')),
+        .addStringOption(options => options.setName('option').setDescription('Specifies if the link should be unguessable or short. Check README for details.')),
     async execute(interaction) {
         var userInput = interaction.options.getString('input')
         var userOption = interaction.options.getString('option')
