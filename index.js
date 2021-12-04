@@ -33,6 +33,15 @@ const rest = new REST({ version: '9' }).setToken(settings.botToken);
 })();
 
 client.on('ready', () => {
+    if (settings.activityType === "STREAMING"){
+      client.user.setActivity(settings.activityMessage, { type: 'STREAMING', url: settings.streamURL});
+    }
+    else if(settings.activityType === "PLAYING" || settings.activityType === "LISTENING" || settings.activityType === "WATCHING"){
+      client.user.setActivity(settings.activityMessage, { type: settings.activityType});
+    }
+    else{
+      client.user.setActivity('/short', { type: 'PLAYING'});
+    }
     console.log(`Logged in as ${client.user.tag}!`);
   });
   client.on('interactionCreate', async interaction => {

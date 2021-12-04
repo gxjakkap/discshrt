@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, Interaction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const axios = require('axios')
 const apiUrl = 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key='

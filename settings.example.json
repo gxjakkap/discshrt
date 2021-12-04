@@ -2,5 +2,8 @@
     "botToken": "",
     "botClientId": "",
     "firebaseApiKey": "",
-    "domainUriPrefix": ""
+    "domainUriPrefix": "",
+    "activityType": "",
+    "streamURL": "",
+    "activityMessage": ""
 }
