@@ -16,6 +16,7 @@
     "url": "https://github.com/gxjakkap/discshrt/issues",
     "email": "gunt@guntxjakka.me"
   },
+  "engines": {"node": "17.0.1"},
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
     "axios": "^0.24.0",
